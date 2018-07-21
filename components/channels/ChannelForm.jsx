@@ -26,4 +26,4 @@ class ChannelForm extends Component {
     }
 }
 
-export ChannelForm;
+export default ChannelForm;

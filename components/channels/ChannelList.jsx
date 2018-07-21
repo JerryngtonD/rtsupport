@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Channel from './Channel';
+import Channel from './Channel.jsx';
 
 class ChannelList extends Component {
     static propTypes = {
@@ -14,6 +14,7 @@ class ChannelList extends Component {
                 {this.props.channels.map((channel) => {
                     return  <Channel
                                 channel={channel}
+                                key = {channel.id}
                                 setChannel={this.props.setChannel}
                             />
                 })}
