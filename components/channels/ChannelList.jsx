@@ -5,7 +5,8 @@ import Channel from './Channel.jsx';
 class ChannelList extends Component {
     static propTypes = {
         channels: PropTypes.array.isRequired,
-        setChannel: PropTypes.func.isRequired
+        setChannel: PropTypes.func.isRequired,
+        activeChannel: PropTypes.object.isRequired
     };
 
     render() {
@@ -15,7 +16,7 @@ class ChannelList extends Component {
                     return  <Channel
                                 channel={channel}
                                 key = {channel.id}
-                                setChannel={this.props.setChannel}
+                                {...this.props}
                             />
                 })}
             </ul>

@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 class Channel extends  Component {
     static propTypes = {
         channel: PropTypes.object.isRequired,
-        setChannel: PropTypes.func.isRequired
+        setChannel: PropTypes.func.isRequired,
+        activeChannel: PropTypes.object.isRequired
     };
 
     onClick = (e) => {
@@ -14,9 +15,10 @@ class Channel extends  Component {
     };
 
     render () {
-        const {channel} = this.props;
+        const {channel, activeChannel} = this.props;
+        const active = activeChannel === channel ? 'active' : '';
         return (
-            <li>
+            <li className={active}>
                 <a onClick = {this.onClick}>
                     {channel.name}
                 </a>
