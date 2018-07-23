@@ -11,25 +11,57 @@ class App extends Component {
             channels: [],
             users: [],
             messages: [],
-            activeChannel: {}
+            activeChannel: {},
+            connected: false
         };
     }
+
+    componentDidMount () {
+        let ws = this.ws = new WebSocket('wss://echo.websocket.org');
+        ws.onmessage = this.message;
+        ws.onopen = this.open;
+        ws.onclose = this.close;
+
+    }
+
+    message = (e) => {
+        const event = JSON.parse(e.data);
+        if (event.name = 'channel add') {
+            this.newChannel(event.data);
+        }
+    };
+
+    open = () => {
+        this.setState({
+            connected: true
+        })
+    };
+
+    close = () => {
+        this.setState({
+            connected: false
+        })
+    };
+
+    newChannel = (channel) => {
+        let {channels} = this.state;
+        channels.push(channel);
+        this.setState({channels});
+    };
 
     generateId() {
         return (new Date().getTime()).toString(36);
     }
 
     addChannel = (name) => {
-        let { channels } = this.state;
-        channels.push({
-            id:  this.generateId(),
-            name
-        });
-        this.setState({
-            channels
-        })
-
-        //TODO Send to server
+        let msg = {
+            name: 'message add',
+            data: {
+                id: this.generateId(),
+                name
+            }
+        };
+        this.ws.send(JSON.stringify(msg));
     };
 
     setChannel = (activeChannel) => {
