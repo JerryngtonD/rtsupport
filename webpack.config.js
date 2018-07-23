@@ -1,4 +1,8 @@
 module.exports = {
+    optimization: {
+        minimize: false
+    },
+    mode: 'development',
     devtool: 'source-map',
     entry: './index.js',
     output: {
