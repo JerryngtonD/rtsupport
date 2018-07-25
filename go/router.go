@@ -37,6 +37,6 @@ func (e *Router) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	client := newClient(socket)
-	client.Write()
+	go client.Write()
 	client.Read()
 }
