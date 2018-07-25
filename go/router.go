@@ -7,6 +7,8 @@ import (
 	"github.com/gorilla/websocket"
 )
 
+type Handler func(*Client, interface{})
+
 var upgrader = websocket.Upgrader{
 	ReadBufferSize:  1024,
 	WriteBufferSize: 1024,
@@ -29,6 +31,11 @@ func (r *Router) Handle(msgName string, handler Handler) {
 	r.rules[msgName] = handler
 }
 
+func (r *Router) findHandler(msgName string) (Handler, bool) {
+	handler, found := r.rules[msgName]
+	return handler, found
+}
+
 func (e *Router) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	socket, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
@@ -36,7 +43,7 @@ func (e *Router) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		fmt.Print(w, err.Error())
 		return
 	}
-	client := newClient(socket)
+	client := newClient(socket, e.findHandler)
 	go client.Write()
 	client.Read()
 }

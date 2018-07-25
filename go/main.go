@@ -4,11 +4,6 @@ import (
 	"net/http"
 )
 
-type Message struct {
-	Name string      `json:"name"`
-	Data interface{} `json:"data":`
-}
-
 type Channel struct {
 	Id   string `json:"id"`
 	Name string `json:"name"`
@@ -17,7 +12,7 @@ type Channel struct {
 func main() {
 	router := &Router{}
 
-	router.Handle("channel add", addChannel)
+	//router.Handle("channel add", addChannel)
 
 	http.Handle("/", router)
 	http.ListenAndServe(":5000", nil)

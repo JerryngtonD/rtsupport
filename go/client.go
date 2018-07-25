@@ -1,8 +1,10 @@
 package main
 
 import (
-	"golang.org/x/net/websocket"
+	"github.com/gorilla/websocket"
 )
+
+type FindHandler func(string) (Handler, bool)
 
 type Message struct {
 	Name string      `json:"name"`
@@ -10,8 +12,9 @@ type Message struct {
 }
 
 type Client struct {
-	send   chan Message
-	socket *websocket.Conn
+	send        chan Message
+	socket      *websocket.Conn
+	findHandler FindHandler
 }
 
 func (client *Client) Read() {
@@ -20,8 +23,11 @@ func (client *Client) Read() {
 		if err := client.socket.ReadJSON(&message); err != nil {
 			break
 		}
-		//TODO: CALL HANDLE FUNCTION
+		if handler, found := client.findHandler(message.Name); found {
+			handler(client, message.Data)
+		}
 	}
+	client.socket.Close()
 }
 
 func (client *Client) Write() {
@@ -33,9 +39,10 @@ func (client *Client) Write() {
 	client.socket.Close()
 }
 
-func newClient(socket *websocket.Conn) *Client {
+func newClient(socket *websocket.Conn, findHandler FindHandler) *Client {
 	return &Client{
-		send:   make(chan Message),
-		socket: socket,
+		send:        make(chan Message),
+		socket:      socket,
+		findHandler: findHandler,
 	}
 }
