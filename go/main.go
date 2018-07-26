@@ -10,9 +10,9 @@ type Channel struct {
 }
 
 func main() {
-	router := &Router{}
+	router := NewRouter()
 
-	//router.Handle("channel add", addChannel)
+	router.Handle("channel add", addChannel)
 
 	http.Handle("/", router)
 	http.ListenAndServe(":5000", nil)
