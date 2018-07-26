@@ -21,7 +21,7 @@ type Router struct {
 	rules map[string]Handler
 }
 
-func newRouter() *Router {
+func NewRouter() *Router {
 	return &Router{
 		rules: make(map[string]Handler),
 	}
