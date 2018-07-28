@@ -20,15 +20,22 @@ func main() {
 		fmt.Println(err)
 		return
 	}
+	// response, err := r.Table("user").
+	// 	Insert(user).
+	// 	RunWrite(session)
+	// if err != nil {
+	// 	fmt.Println(err)
+	// 	return
+	// }
+
 	user := User{
-		Name: "anonymous",
+		Name: "Davydov Evgeny",
 	}
-	response, err := r.Table("user").
-		Insert(user).
+
+	response, _ := r.Table("user").
+		Get("b453058d-bbff-4702-92b8-3d7310b6697a").
+		Update(user).
 		RunWrite(session)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+
 	fmt.Printf("%#v\n", response)
 }
