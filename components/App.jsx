@@ -18,7 +18,8 @@ class App extends Component {
     }
 
     componentDidMount () {
-        let socket = this.socket = new Socket();
+        let ws = new WebSocket('ws://localhost:5000');
+        let socket = this.socket = new Socket(ws);
         socket.on('connect', this.onConnect);
         socket.on('disconnect', this.onDisconnect);
         socket.on('channel add', this.onAddChannel);
