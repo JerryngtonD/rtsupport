@@ -1,0 +1,15 @@
+2018-07-29T19:36:42.504754000 0.021708s notice: Recursively removing directory /Users/evgeny/Desktop/rtsupport/go/rethinkdb_data/tmp
+2018-07-29T19:36:42.506333000 0.023291s notice: Initializing directory /Users/evgeny/Desktop/rtsupport/go/rethinkdb_data
+2018-07-29T19:36:42.506447000 0.023400s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/Users/evgeny/Desktop/rtsupport/go/rethinkdb_data' did not already exist or is empty.)
+2018-07-29T19:36:42.506489000 0.023441s notice: Running rethinkdb 2.3.6 (CLANG 9.0.0 (clang-900.0.37))...
+2018-07-29T19:36:42.511899000 0.028852s notice: Running on Darwin 17.7.0 x86_64
+2018-07-29T19:36:42.511947000 0.028899s notice: Loading data from directory /Users/evgeny/Desktop/rtsupport/go/rethinkdb_data
+2018-07-29T19:36:42.662832000 0.179784s info: Automatically using cache size of 3001 MB
+2018-07-29T19:36:42.662849000 0.179801s error: Failed to create sockets for listener on port 29015, falling back to IPv4 only
+2018-07-29T19:36:42.663903000 0.180856s error: TCP socket creation failed for port 29015: Can't assign requested address.
+2018-07-29T20:52:24.654908000 0.014785s notice: Running rethinkdb 2.3.6 (CLANG 9.0.0 (clang-900.0.37))...
+2018-07-29T20:52:24.660010000 0.019883s notice: Running on Darwin 17.7.0 x86_64
+2018-07-29T20:52:24.660068000 0.019940s notice: Loading data from directory /Users/evgeny/Desktop/rtsupport/go/rethinkdb_data
+2018-07-29T20:52:24.693081000 0.052953s info: Automatically using cache size of 3458 MB
+2018-07-29T20:52:24.693101000 0.052972s error: Failed to create sockets for listener on port 29015, falling back to IPv4 only
+2018-07-29T20:52:24.698081000 0.057953s error: TCP socket creation failed for port 29015: Can't assign requested address.
