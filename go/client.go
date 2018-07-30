@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 
 	"github.com/gorilla/websocket"
@@ -63,6 +64,12 @@ func (c *Client) Close() {
 	for _, ch := range c.stopChannels {
 		ch <- true
 	}
+	result, err := r.Table("user").Get(c.id).Delete().Run(c.session)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println(result)
 	close(c.send)
 }
 
