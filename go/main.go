@@ -7,16 +7,6 @@ import (
 	r "gopkg.in/gorethink/gorethink.v4"
 )
 
-type Channel struct {
-	Id   string `json:"id" gorethink:"id,omitempty"`
-	Name string `json:"name" gorethink:"name"`
-}
-
-type User struct {
-	Id   string `gorethink:"id,omitempty"`
-	Name string `gorethink:"name"`
-}
-
 func main() {
 	session, err := r.Connect(r.ConnectOpts{
 		Address:  "localhost:28015",

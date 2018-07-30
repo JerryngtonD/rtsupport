@@ -13,3 +13,30 @@
 2018-07-29T20:52:24.693081000 0.052953s info: Automatically using cache size of 3458 MB
 2018-07-29T20:52:24.693101000 0.052972s error: Failed to create sockets for listener on port 29015, falling back to IPv4 only
 2018-07-29T20:52:24.698081000 0.057953s error: TCP socket creation failed for port 29015: Can't assign requested address.
+2018-07-30T09:55:58.219835000 0.032498s notice: Running rethinkdb 2.3.6 (CLANG 9.0.0 (clang-900.0.37))...
+2018-07-30T09:55:58.225194000 0.037853s notice: Running on Darwin 17.7.0 x86_64
+2018-07-30T09:55:58.225272000 0.037931s notice: Loading data from directory /Users/evgeny/Desktop/rtsupport/go/rethinkdb_data
+2018-07-30T09:55:58.262966000 0.075624s info: Automatically using cache size of 3941 MB
+2018-07-30T09:55:58.262983000 0.075641s error: Failed to create sockets for listener on port 29015, falling back to IPv4 only
+2018-07-30T09:55:58.269159000 0.081818s error: TCP socket creation failed for port 29015: Can't assign requested address.
+2018-07-30T09:58:00.903301000 0.010907s notice: Running rethinkdb 2.3.6 (CLANG 9.0.0 (clang-900.0.37))...
+2018-07-30T09:58:00.909424000 0.017027s notice: Running on Darwin 17.7.0 x86_64
+2018-07-30T09:58:00.909476000 0.017078s notice: Loading data from directory /Users/evgeny/Desktop/rtsupport/go/rethinkdb_data
+2018-07-30T09:58:00.941832000 0.049435s info: Automatically using cache size of 6442 MB
+2018-07-30T09:58:00.942585000 0.050187s notice: Listening for intracluster connections on port 29015
+2018-07-30T09:58:00.944655000 0.052257s notice: Listening for client driver connections on port 28015
+2018-07-30T09:58:00.944815000 0.052417s notice: Listening for administrative HTTP connections on port 8080
+2018-07-30T09:58:00.944816000 0.052418s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-07-30T09:58:00.944821000 0.052423s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-07-30T09:58:00.944825000 0.052426s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-07-30T09:58:00.944831000 0.052433s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-07-30T09:58:00.944839000 0.052440s notice: Server ready, "MacBook_Pro_Evgeny_local_hsu" 3be2c3f6-5244-494d-a176-70eb4476c1f0
+2018-07-30T10:01:28.871828000 207.979427s info: Table da460efd-0435-457a-9fde-d296d02efc3e: Starting a new Raft election for term 1.
+2018-07-30T10:01:28.872091000 207.979689s info: Table da460efd-0435-457a-9fde-d296d02efc3e: Added replica on this server.
+2018-07-30T10:01:28.891055000 207.998654s info: Table da460efd-0435-457a-9fde-d296d02efc3e: This server is Raft leader for term 1. Latest log index is 0.
+2018-07-30T10:01:35.617972000 214.725570s info: Table 22826d4a-10c9-41c9-9bb2-f7f7ab6bf51a: Starting a new Raft election for term 1.
+2018-07-30T10:01:35.618251000 214.725850s info: Table 22826d4a-10c9-41c9-9bb2-f7f7ab6bf51a: Added replica on this server.
+2018-07-30T10:01:35.636956000 214.744555s info: Table 22826d4a-10c9-41c9-9bb2-f7f7ab6bf51a: This server is Raft leader for term 1. Latest log index is 0.
+2018-07-30T10:01:39.364834000 218.472432s info: Table 8d4fa0e5-cb08-4e8d-a923-55519fc042c3: Starting a new Raft election for term 1.
+2018-07-30T10:01:39.365101000 218.472699s info: Table 8d4fa0e5-cb08-4e8d-a923-55519fc042c3: Added replica on this server.
+2018-07-30T10:01:39.384577000 218.492175s info: Table 8d4fa0e5-cb08-4e8d-a923-55519fc042c3: This server is Raft leader for term 1. Latest log index is 0.
